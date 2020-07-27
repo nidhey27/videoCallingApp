@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Chat</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        
+    }
+    
+    body{
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        display: grid;
+        transform: translate(-50%, -50%);
+        background: aliceblue;
+        }
+    .box {
+        width: 300px;
+        height: 350px;
+        border: 0px;
+        text-align: center;
+        box-shadow: 0 10px 120px 20px gray ;
+        padding: 16px;
+        border-radius: 10%;
+        background: linear-gradient(to bottom right, rgba(255,0,0,0.4), rgba(0,0,255,0.4));
+        color: white;
+        font-weight: bold;
+    }
+    a:hover{
+        text-decoration: none;
+    }
+</style>
+<body>
+    <div class="box">
+       <h1>N || V || C</h1>
+       <sub> ~ Powered By Nycto Nid</sub>
+       <hr style="margin-top: 8px;margin-bottom: 24px;">
+       <a href="/" ><button class="btn btn-block btn-danger">Create Room</button></a>
+        <br>
+       <button onclick="showInput()" class="btn btn-block btn-primary">Join Room</button>
+       <br>
+       <div id="joinRoom" style="display: none;">
+        <input type="text" placeholder="Enter Room Id" id="roomId" class="form-contorl"/>
+        
+            <button onclick="join()" class="btn btn-warning" style="margin-top: 8px;">Join</button>
+       </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function showInput(){
+        document.getElementById('joinRoom').style.display = 'block'
+    }
+
+    function join(){
+        const roomId = document.getElementById('roomId').value
+        window.location.href = `/${roomId}`
+    }
+
+</script>
